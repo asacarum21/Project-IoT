@@ -1,0 +1,32 @@
+import tkinter
+from tkinter import *
+from tkinter import messagebox
+
+
+class Home():
+
+    def __init__(self, master):
+        self.geometry('400*200+100+200')
+        self.title('Welcome')
+        frame = Frame(master)
+        frame.pack()
+
+        self.label1 = Label(self.master, text='Selamat Datang', fg='blue').grid(row=0, column=2)
+        self.Nim = Label(self.master, text='NIM', fg='black').grid(row=0, column=0, sticky='w')
+        self.Pin = Label(self.master, text='PIN', fg='black').grid(row=1, column=0, sticky='w')
+        self.Quit = Button(self.master, text='Quit', fg='black', command=self.finish).grid(row=6, column=2)
+        self.Login = Button(self.master, text='Login', fg='black', command=self.Login).grid(row=6, column=3)
+        self.Nim = Entry(self.master, frame).grid(row=0, column=1)
+        self.Pin = Entry(self.master, frame).grid(row=1, column=1)
+
+    def Login(self):
+        print('Selamat DATANG')
+
+    def finish(self):
+        self.master.destroy()
+
+    root = Tk()
+    test = Home(root)
+    test.mainloop()
+
+
